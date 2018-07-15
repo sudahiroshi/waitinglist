@@ -4,13 +4,15 @@
 class List {
     /**
      * コンストラクタ
-     * @param {number} average - (客の)処理時間の平均値
+     * @param {number} delta - (客の)処理時間の平均値
      * @param {number} sigma - 処理時間の標準偏差
+     * @param {number} alpha - 客の流れ密度
      */
-    constructor(average, sigma) {
+    constructor(delta, sigma, alpha) {
         this._list = [];
-        this._average = average;
+        this._average = delta;
         this._sigma = sigma;
+        this._alpha = alpha;
         this._next = 0;
     }
 
@@ -39,9 +41,17 @@ class List {
         let rew = this._next -= time;
         if (this._next <= 0) {
             this._list.push(new Customer(this._average, this._sigma));
-            this._next += 3.2; // 次の客が来るまでの時間を設定
+            this._next += this.poison(); // 次の客が来るまでの時間を設定
             return rew;
         }
         return 0;
+    }
+
+    /**
+     * 次の客が来るまでの時間を設定
+     * @returns {number} 次の客が来るまでの時間
+     */
+    poison() {
+        return 1.0; // ここに教科書P125のpoison関数に相当するプログラムを書く
     }
 }
