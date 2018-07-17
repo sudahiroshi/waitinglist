@@ -1,7 +1,9 @@
+import { List } from './list.js';
+import { Register } from './register.js';
 /**
  * 全体制御のためのクラス
  */
-class Shop {
+export default class Shop {
     /**
      * コンストラクタ
      * @param {number} number - レジの数

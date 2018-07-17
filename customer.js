@@ -1,7 +1,7 @@
 /**
  * 客を取り扱うクラス
  */
-class Customer {
+export default class Customer {
     /**
      * コンストラクタ
      * @param {number} delta - (客の)処理時間の平均値

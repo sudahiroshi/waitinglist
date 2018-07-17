@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>待ち行列問題シミュレータ教材の雛形</title>
-    <script src="customer.js"></script>
-    <script src="list.js"></script>
-    <script src="register.js"></script>
-    <script src="shop.js"></script>
-    <script>
+    <script type="module">
+        import { Shop } from "./src/Shop.js";
         window.addEventListener('load', function () {
             var shop = new Shop(5, 4.0, 0.5, 1.0);
             var tick = document.querySelector('#tick');

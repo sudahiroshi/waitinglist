@@ -1,7 +1,9 @@
+import { Customer } from './customer.js';
+
 /**
  * 待ち行列を扱うクラス
  */
-class List {
+export default class List {
     /**
      * コンストラクタ
      * @param {number} delta - (客の)処理時間の平均値

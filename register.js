@@ -1,7 +1,7 @@
 /**
  * レジ（単独）を取り扱うクラス
  */
-class Register {
+export default class Register {
     /**
      * コンストラクタ
      * @param {number} id - レジID
